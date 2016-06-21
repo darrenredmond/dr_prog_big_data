@@ -18,6 +18,14 @@ class Calculator(object):
         else:
             raise ValueError
 
+    def multiply(self, x, y):
+        number_types = (int, long, float, complex)
+ 
+        if isinstance(x, number_types) and isinstance(y, number_types):
+            return x * y
+        else:
+            raise ValueError
+
 # test the calculator functionality
 class TestCalculator(unittest.TestCase):
 
@@ -43,6 +51,18 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(-2, result)
         result = self.calc.subtract(2, -4)
         self.assertEqual(6, result)
+
+	# this tests the multiply functionality
+	# 2 * 2 = 4
+	# 2 * 4 = 8
+	# 2 * (-4) = -8
+    def test_calculator_multiply_method_returns_correct_result(self):
+        result = self.calc.multiply(2, 2)
+        self.assertEqual(4, result)
+        result = self.calc.multiply(2,4)
+        self.assertEqual(8, result)
+        result = self.calc.multiply(2, -4)
+        self.assertEqual(-8, result)
 
 	#def test_calculator_returns_error_message_if_both_args_not_numbers(self):
     #    self.assertRaises(ValueError, self.calc.add, 'two', 'three')
