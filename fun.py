@@ -24,6 +24,11 @@ def square(x):
     """
     return x * x
 
+def cube(x):
+    """Return the cube of x.
+    """
+    return x * x * x
+
 class FactorialTest(unittest.TestCase):
 
     def test(self):
@@ -53,6 +58,13 @@ class SquareTest(unittest.TestCase):
         self.assertEqual(4, square(2))
         self.assertEqual(4, square(-2))
         self.assertEqual(0, square(0))
+
+class CubeTest(unittest.TestCase):
+
+    def test(self):
+        self.assertEqual(8, cube(2))
+        self.assertEqual(-8, cube(-2))
+        self.assertEqual(0, cube(0))
 
 if __name__ == '__main__':
     unittest.main()
