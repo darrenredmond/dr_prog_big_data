@@ -3,7 +3,7 @@ import unittest
 class Calculator(object):
  
     def add(self, x, y):
-        number_types = (int, long, float, complex)
+        number_types = (int, float, complex)
  
         if isinstance(x, number_types) and isinstance(y, number_types):
             return x + y
@@ -11,7 +11,7 @@ class Calculator(object):
             raise ValueError
 
     def subtract(self, x, y):
-        number_types = (int, long, float, complex)
+        number_types = (int, float, complex)
  
         if isinstance(x, number_types) and isinstance(y, number_types):
             return x - y
@@ -19,7 +19,7 @@ class Calculator(object):
             raise ValueError
 
     def multiply(self, x, y):
-        number_types = (int, long, float, complex)
+        number_types = (int, float, complex)
  
         if isinstance(x, number_types) and isinstance(y, number_types):
             return x * y
