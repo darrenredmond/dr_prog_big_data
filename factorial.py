@@ -12,5 +12,5 @@ def factorial(n):
     return reduce(lambda x,y:x*y, [1]+range(1,n+1))
 
 if __name__ == '__main__':
-    value = int(raw_input('Enter a number?'))
-    print factorial_simple(value)
+    value = int(input('Enter a number?'))
+    print(factorial_simple(value))
