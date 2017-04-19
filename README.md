@@ -3,3 +3,6 @@ Darren Redmond programming for big data exercies
 Hello Class
 
 Changes on the evening of the 19th April.
+
+
+Changes Locally.
