@@ -27,14 +27,16 @@ def get_commits(data):
 
 def get_authors(data):
     sep = 72*'-'
-    authors = []
+    authors = {}
     index = 0
     while index < len(data):
         try:
             # parse each of the authors and put them into a list of commits
             author = data[index + 1].split('|')[1].strip()
-            if author not in authors:
-                authors.append(author)
+            if author in authors:
+                authors[author] = authors[author] + 1
+            else:
+                authors[author] = 1
             index = data.index(sep, index + 1)
         except IndexError:
             break

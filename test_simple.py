@@ -19,6 +19,7 @@ class TestCommits(unittest.TestCase):
         authors = get_authors(self.data)
         print authors
         self.assertEqual(10, len(authors))
+        self.assertEqual(191, authors['Thomas'])
 
     def test_first_commit(self):
         commits = get_commits(self.data)
