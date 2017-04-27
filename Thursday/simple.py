@@ -26,6 +26,13 @@ def get_commits(data):
             break
     return commits
 
+def get_authors(commits):
+    authors = []
+    for commit in commits:
+        if commit['author'] not in authors:
+            authors.append(commit['author'])
+    return authors
+
 if __name__ == '__main__':
     # open the file - and read all of the lines.
     changes_file = 'changes_python.log'

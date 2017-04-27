@@ -1,7 +1,7 @@
 
 import unittest
 
-from simple import get_commits, read_file
+from simple import get_authors, get_commits, read_file
 
 class TestCommits(unittest.TestCase):
 
@@ -14,6 +14,12 @@ class TestCommits(unittest.TestCase):
     def test_number_of_commits(self):
         commits = get_commits(self.data)
         self.assertEqual(422, len(commits))
+
+    def test_number_of_authors(self):
+        commits = get_commits(self.data)
+        authors = get_authors(commits)
+        print authors
+        self.assertEqual(10, len(authors))
 
     def test_first_commit(self):
         commits = get_commits(self.data)
