@@ -27,10 +27,13 @@ def get_commits(data):
     return commits
 
 def get_authors(commits):
-    authors = []
+    authors = {}
     for commit in commits:
-        if commit['author'] not in authors:
-            authors.append(commit['author'])
+        author = commit['author']
+        if author not in authors:
+            authors[author] = 1
+        else:
+            authors[author] = authors[author] + 1
     return authors
 
 if __name__ == '__main__':
