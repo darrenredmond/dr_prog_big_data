@@ -1,7 +1,7 @@
 
 import unittest
 
-from simple import get_authors, get_commits, read_file
+from simple import get_authors, get_commits, read_file, sort_authors
 
 class TestCommits(unittest.TestCase):
 
@@ -20,6 +20,10 @@ class TestCommits(unittest.TestCase):
         print authors
         self.assertEqual(10, len(authors))
         self.assertEqual(191, authors['Thomas'])
+        sorted_authors = sort_authors(authors)
+        sorted_authors.reverse()
+        print sorted_authors
+        self.assertEqual(('Jimmy', 152), sorted_authors[1])
 
     def test_first_commit(self):
         commits = get_commits(self.data)

@@ -1,3 +1,4 @@
+import operator
 
 def read_file(changes_file):
     # use strip to strip out spaces and trim the line.
@@ -41,6 +42,9 @@ def get_authors(data):
         except IndexError:
             break
     return authors
+
+def sort_authors(authors):
+    return sorted(authors.items(), key=operator.itemgetter(1))
 
 if __name__ == '__main__':
     # open the file - and read all of the lines.
